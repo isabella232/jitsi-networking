@@ -303,13 +303,6 @@ export class AppGui extends EventTarget {
     }
 
     showLogin() {
-        this.connectButton.unlock();
-        this.roomNameInput.unlock();
-        this.userNameInput.unlock();
-        this.roomSelector.unlock();
-        this.newRoomButton.unlock();
-
-        this.appView.hide();
         this.loginView.show();
         this.connectButton.innerHTML = "Connect";
     }
@@ -361,12 +354,12 @@ export class AppGui extends EventTarget {
                 startWithVideoMuted: true
             },
             interfaceConfigOverwrite: {
-                DISABLE_VIDEO_BACKGROUND: true,
                 SHOW_JITSI_WATERMARK: false,
-                SHOW_WATERMARK_FOR_GUESTS: false,
+                SHOW_BRAND_WATERMARK: false,
+                VERTICAL_FILMSTRIP: true,
+                RECENT_LIST_ENABLED: false,
                 SHOW_POWERED_BY: true,
-                AUTHENTICATION_ENABLE: false,
-                MOBILE_APP_PROMO: false
+                filmStripOnly: false,
             },
             roomName: roomName,
             onload: (evt) => {
@@ -382,7 +375,8 @@ export class AppGui extends EventTarget {
         api.executeCommand("displayName", userName);
         this.game.registerGameListeners(api);
         api.addEventListener("videoConferenceJoined", this.loginView.hide.bind(this.loginView));
-
+        api.executeCommand('subject', 'Aeternity test conference');
+        api.executeCommand('email', 'example@aeternity.com');
         addEventListener("unload", () => api.dispose());
     }
 }
