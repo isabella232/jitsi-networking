@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
-    <script src="https://league.superhero.com/external_api.js"></script>
+    <script src="scripts/jitsi-meet-external-api.js"></script>
 
     <script id="lozya-settings">
         const JITSI_HOST = "league.superhero.com",
@@ -204,11 +204,7 @@ grid-template-rows: auto;">
     </section>
 
     <script type="module">
-        const pageFileName = document.location.pathname.substring(1) || "index.html",
-            pageName = pageFileName.match(/(\w+)\.html/)[1],
-            scriptFile = `./scripts/${pageName}.js`;
-
-        import(scriptFile);
+        import('./scripts/index.js');
     </script>
     <script src="./main.js"></script>
 </body>
