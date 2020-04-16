@@ -192,10 +192,6 @@ export class AppGui extends EventTarget {
             this.userNameInput = document.querySelector("#userName");
             this.connectButton = document.querySelector("#connect");
             if (this.loginView
-                && this.roomSelector
-                && this.newRoomButton
-                && this.roomNameInput
-                && this.userNameInput
                 && this.connectButton) {
                 this.roomNameInput.addEventListener("enter", this.userNameInput.focus.bind(this.userNameInput));
                 this.userNameInput.addEventListener("enter", this.login.bind(this));
