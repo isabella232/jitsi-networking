@@ -315,7 +315,7 @@ export class AppGui extends EventTarget {
     }
 
     login() {
-        this.connectButton.innerHTML = "Connecting...";
+        this.connectButton.innerHTML = "Waiting host...";
         this.connectButton.lock();
         this.roomNameInput.lock();
         this.userNameInput.lock();
