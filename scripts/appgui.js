@@ -353,14 +353,6 @@ export class AppGui extends EventTarget {
                 startVideoMuted: 0,
                 startWithVideoMuted: true
             },
-            interfaceConfigOverwrite: {
-                SHOW_JITSI_WATERMARK: false,
-                SHOW_BRAND_WATERMARK: false,
-                VERTICAL_FILMSTRIP: true,
-                RECENT_LIST_ENABLED: false,
-                SHOW_POWERED_BY: true,
-                filmStripOnly: false,
-            },
             roomName: roomName,
             onload: (evt) => {
                 this.game.jitsiClient.setJitsiApi(api);
