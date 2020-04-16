@@ -340,7 +340,7 @@ export class AppGui extends EventTarget {
 
     startConference(roomName, userName) {
         this.appView.show();
-
+        this.loginView.hide();
         location.hash = roomName;
 
         const api = new JitsiMeetExternalAPI(JITSI_HOST, {
@@ -374,7 +374,7 @@ export class AppGui extends EventTarget {
         });
         api.executeCommand("displayName", userName);
         this.game.registerGameListeners(api);
-        api.addEventListener("videoConferenceJoined", this.loginView.hide.bind(this.loginView));
+        // api.addEventListener("videoConferenceJoined", this.loginView.hide.bind(this.loginView));
         api.executeCommand('subject', 'Aeternity test conference');
         api.executeCommand('email', 'example@aeternity.com');
         addEventListener("unload", () => api.dispose());
