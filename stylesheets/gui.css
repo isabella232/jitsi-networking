@@ -1,0 +1,94 @@
+﻿body > section, #frontBuffer, #jitsi {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#frontBuffer {
+    touch-action: none;
+}
+
+body > section {
+    pointer-events: none;
+}
+
+    body > section > * {
+        pointer-events: initial;
+    }
+
+#guiView > div {
+    width: 50%;
+    max-width: 900px;
+    max-height: 75%;
+    background-color: white;
+    padding: 1em 1em 3em 1em;
+    margin: 5em auto auto auto;
+    border-radius: 5px;
+    border: solid 4px black;
+    box-shadow: rgba(0, 0, 0, .4) 10px 10px 20px;
+    overflow-y: scroll;
+}
+
+@media(max-width: 899px) {
+    #guiView > div {
+        width: 100%;
+        height: 100%;
+        max-height: initial;
+        border: none;
+        border-radius: 0;
+        margin: auto;
+    }
+}
+
+#toolbar {
+    background-color: #bbb;
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+    #toolbar > * {
+        display: inline-flex;
+        margin: 0 0.5em 0 0;
+    }
+
+#loginView form > * {
+    margin: .25em;
+    padding: .25em;
+}
+
+label {
+    text-align: right;
+    margin-right: 0.25em;
+}
+
+#emoji, #options {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow-y: hidden !important;
+}
+
+#emoji {
+    grid-template-columns: 5fr 1fr 1fr;
+}
+
+    #emoji > .content {
+        overflow-y: scroll;
+    }
+
+        #emoji > .content button {
+            font-size: 200%;
+            border: none;
+            background-color: transparent;
+        }
+
+#options {
+    grid-template-columns: 5fr 1fr 1fr;
+}
