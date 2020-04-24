@@ -15,7 +15,7 @@
      *   https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md
      */
 
-    const FRONT_END_SERVER = "https://meet.primrosevr.com",
+    const FRONT_END_SERVER = "https://aeternity.com",
         ALLOW_LOCAL_HOST = true,
         USE_3D_SPATIALIZATION = true;
 

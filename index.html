@@ -7,22 +7,21 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=0, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="keywords" content="peer-to-peer, networking, Web applications, WebRTC">
     <meta name="msapplication-TileColor" content="#253858">
-    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="./icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#253858">
-    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
 
     <script id="lozya-settings">
         const JITSI_HOST = "league.superhero.com",
@@ -129,6 +128,11 @@
         <div id="login">
             <h1>
                 Superhero League Networking
+                <a href="https://github.com/aeternity/league-networking" target="_blank" rel="noopener">
+                    <span class="icon icon-github" title="Follow on Github">
+                        <span class="accessibility-text">Follow on Github</span>
+                    </span>
+                </a>
             </h1>
 
             <p>Voice chat with an RPG map. Volume scales with distance from other users. Walk around, talk to folks, have private conversations by huddling in a corner, or drop in on other conversations. Ideal for meetups!</p>
@@ -137,7 +141,6 @@
 display: grid;
 grid-template-columns: 2fr 4fr 2fr;
 grid-template-rows: auto;">
-                <div style="display: none">
                 <label for="room" style="
     grid-column: 1;
     grid-row: 1">
@@ -146,18 +149,16 @@ grid-template-rows: auto;">
                 <select id="existingRooms" style="
     grid-column: 2;
     grid-row: 1">
-                    <option value="JitsiMeetAPIExample">JitsiMeetAPIExample</option>
+                    <option value="Networking">Networking</option>
                 </select>
-                <input type="hidden" id="roomName" autocomplete="off" placeholder="(Required)" style="
+                <input type="text" id="roomName" autocomplete="off" placeholder="(Required)" style="
     grid-column: 2;
     grid-row: 1;
-    display: none" value="JitsiMeetAPIExample"/>
+    display: none" value="Networking"/>
                 <button type="button" id="createNewRoom" title="Create a new, temporary room" style="
     grid-column: 3">
                     New
                 </button>
-
-                </div>
 
                 <label for="user" style="
     grid-column: 1;
@@ -167,14 +168,19 @@ grid-template-rows: auto;">
                 <input type="text" id="userName" placeholder="(Required)" name="userName" style="
     grid-column: 2;
     grid-row: 2" />
+
                 <button type="button" id="connect" style="
     grid-column: 3;
     grid-row: 2">
                     Loading...
                 </button>
             </form>
+            <h2>Preview</h2>
+            <video src="videos/demo.webm" style="width:100%" loop autoplay controls></video>
             <h2>Instructions</h2>
+            <aside style="border:dashed 2px darkred;background-color:wheat;border-radius:5px;padding:0.5em"><strong>Note:</strong> Superhero League Networking is built on top of <a href="https://jitsi.org">Jitsi Meet</a>. Jitsi does not support iPhones and iPads.</aside>
             <ul>
+                <li><strong>Be careful in picking your room name</strong>, if you don't want randos to join. Traffic is low right now, but you never know.</li>
                 <li>Try to <strong>pick a unique user name</strong>. A lot of people use "Test" and then there are a bunch of people with the same name running around.</li>
                 <li><strong>Open the Options view</strong> to set the URL to the avatar image you would like to use.</li>
                 <li><strong>Click on the map</strong> to move your avatar to wherever you want. Movement is instantaneous, with a smooth animation over the transition. Your avatar will stop at walls.</li>
@@ -182,8 +188,9 @@ grid-template-rows: auto;">
                 <li><strong>Click on yourself</strong> to open a list of Emoji. Select an Emoji to float it out into the map.</li>
                 <li><strong>Hit the E key</strong> to re-emote with your last selected Emoji.</li>
                 <li>You can <strong>roll your mouse wheel</strong> or <strong>pinch your touchscreen</strong> to zoom in and out of the map view. This is useful for groups of people standing close to each other to see the detail in their Avatar.</li>
-                <li>Either <strong>Hide the game view</strong> or <strong>Separate the game and meeting views</strong> to be able to access the Jitsi Meet interface. Lozya captures all of the mouse clicks to enable moving.</li>
+                <li>Either <strong>Hide the game view</strong> or <strong>Separate the game and meeting views</strong> to be able to access the Jitsi Meet interface. Calla captures all of the mouse clicks to enable moving.</li>
             </ul>
+            <h4>Based on <a href="https://calla.chat" target="_blank" rel="noopener">Calla</a></h4>
         </div>
 
     </section>
